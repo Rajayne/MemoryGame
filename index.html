@@ -6,8 +6,30 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <h1>Memory Game!</h1>
+    
+    <h1>Match the Tiles!</h1>
+
+    <div>
+      <button id="startbtn">Start!</button>
+    </div>
+
+
     <div id="game">
+    </div>
+    <div class="scoreboard"></div>
+      <h2>Current Score: <span id="currentscore">&mdash;</span></h2>
+      <h2>High Score: <span id="highscore">&mdash;</span></h2>
+    </div>
+      <!-- <div class="cardwrap">
+        <div class="cardfront">
+          <div class="cardback">
+          </div>
+        </div>
+      </div> -->
+    <div id="end">
+      <h1>You Win!</h1>
+      <h4 id="final score"></h4>
+      <a href="index.html" id="restart" class="btn">Play Again?</a>
     </div>
     <script src="script.js"></script>
   </body>

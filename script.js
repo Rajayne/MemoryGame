@@ -2,7 +2,14 @@ const gameContainer = document.getElementById("game");
 let card1 = null;
 let card2 = null;
 let cardsFlipped = 0;
+let currentScore = 0;
+// let lowScore = localStorage.getItem("lowscore");
+let start = document.getElementById("start");
 let noClicking = false;
+
+let startBtn = document.getElementById("startbtn");
+startBtn.addEventListener("click", startGame);
+
 
 const COLORS = [
   "red",
@@ -81,7 +88,7 @@ function handleCardClick(e) {
   if (gif1 === gif2) {
     cardsFlipped += 2;
     card1.removeEventListener("click", handleCardClick);
-    card2.removeEventListener("click", handleCardClick);
+    card2.removeEventListender("click", handleCardClick);
     card1 = null;
     card2 = null;
     noClicking = false;
