@@ -2,13 +2,14 @@ const gameContainer = document.getElementById("game");
 let card1 = null;
 let card2 = null;
 let cardsFlipped = 0;
-let currentScore = 0;
-// let lowScore = localStorage.getItem("lowscore");
-let start = document.getElementById("start");
 let noClicking = false;
+// let currentScore = 0;
+// let highSchore = 0;
+// let lowScore = localStorage.getItem("lowscore");
+// let start = document.getElementById("start");
 
-let startBtn = document.getElementById("startbtn");
-startBtn.addEventListener("click", startGame);
+// let startBtn = document.getElementById("startbtn");
+// startBtn.addEventListener("click", startGame);
 
 
 const COLORS = [
@@ -85,19 +86,19 @@ function handleCardClick(e) {
   let gif1 = card1.className;
   let gif2 = card2.className;
 
-  if (gif1 === gif2) {
-    cardsFlipped += 2;
-    card1.removeEventListener("click", handleCardClick);
-    card2.removeEventListender("click", handleCardClick);
-    card1 = null;
-    card2 = null;
-    noClicking = false;
-  } else {
+    if (gif1 === gif2) {
+      cardsFlipped += 2;
+      card1.removeEventListener("click", handleCardClick);
+      card2.removeEventListener("click", handleCardClick);
+      card1 = null;
+      card2 = null;
+      noClicking = false;
+    } else {
       setTimeout(function() {
         card1.style.backgroundColor = "";
         card2.style.backgroundColor = "";
-        card1.classList.remove('flipped');
-        card2.classList.remove('flipped');
+        card1.classList.remove("flipped");
+        card2.classList.remove("flipped");
         card1 = null;
         card2 = null;
         noClicking = false;
@@ -105,9 +106,9 @@ function handleCardClick(e) {
     }
   }
 
-  if (cardsFlipped === COLORS.length) alert("game over!")
+  if (cardsFlipped === COLORS.length) alert("game over!");
   // you can use event.target to see which element was clicked
-  console.log("you just clicked", e.target);
+  // console.log("you just clicked", e.target);
 }
 
 // when the DOM loads
